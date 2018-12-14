@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+    <title>登录信息</title>
+</head>
+<body>
+<form action="/user/getuserbyid">
+    <table>
+        <tr>
+            <td>用户名：</td>
+            <td><input id="user_name"/></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input id="user_password"/></td>
+        </tr>
+        <tr>
+            <td>年龄：</td>
+            <td><input id="age"/></td>
+        </tr>
+        <button type="button">提交</button>
+    </table>
+</form>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            $.post("/user/getuserbyid",
+                {
+                    name:"liuran",
+                    password:"lr123"
+                },
+                function (data,status) {
+                    alert("数据："+data+"\n状态："+status);
+                }
+
+
+            );
+        });
+    });
+</script>
+</body>
+</html>

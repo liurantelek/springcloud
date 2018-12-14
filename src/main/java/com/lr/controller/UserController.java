@@ -24,7 +24,7 @@ public class UserController {
     public User getUserById(HttpServletRequest request, Model model){
         String id=request.getParameter("id");
         if(id==null||"".equals(id)){
-            id="1";
+            id="2";
         }
             int userId=Integer.parseInt(id);
         User user=userService.getUserById(userId);
